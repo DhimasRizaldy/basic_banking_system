@@ -1,0 +1,33 @@
+### Post (Create Data Users)
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+    "name":"abyan raka",
+    "email":"abyanraka@mail.com",
+    "password": "abyanraka123"
+}
+
+### Get (Get all data users)
+GET http://localhost:3000/api/v1/users
+
+
+### Get (Get data by pagination)
+GET http://localhost:3000/api/v1/users?page=1&limit=3
+
+
+### Get (Get detail data users by:id)
+GET http://localhost:3000/api/v1/users/10
+
+### Update Data Users by:id
+PUT http://localhost:3000/api/v1/users/10
+Content-Type: application/json
+
+{
+    "name":"akhtar yono",
+    "email":"akhtaryono@mail.com",
+    "password": "akhtaryono123"
+}
+
+### Delete data Users by:id
+DELETE http://localhost:3000/api/v1/users/10

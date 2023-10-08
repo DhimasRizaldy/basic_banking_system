@@ -2,7 +2,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const { getPagination } = require('../../helpers/pagination');
 
-// Export Modul Fucntion In users
+// Export Modul Function In users
 module.exports = {
     // Create New Users
     createUsers: async (req, res, next) => {

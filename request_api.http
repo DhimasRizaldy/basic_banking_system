@@ -1,3 +1,5 @@
+###1. Test APi Users
+
 ### Post (Create Data Users)
 POST http://localhost:3000/api/v1/users
 Content-Type: application/json
@@ -31,3 +33,42 @@ Content-Type: application/json
 
 ### Delete data Users by:id
 DELETE http://localhost:3000/api/v1/users/10
+
+
+###2. Test APi Profiles
+
+### Post (Create Data profiles)
+POST http://localhost:3000/api/v1/profiles
+Content-Type: application/json
+
+{
+    "user_id":8,
+    "identity_type":"KTP",
+    "identity_number": "1871143534366",
+    "address": "jln.Bantu Gg.kunci No.67 Rt.4 Kec.Kemiling Kel.Sumberrejo Semarang"
+}
+
+### Get (Get all data profiles)
+GET http://localhost:3000/api/v1/profiles
+
+
+### Get (Get data by pagination)
+GET http://localhost:3000/api/v1/profiles?page=1&limit=3
+
+
+### Get (Get detail data profiles by:id)
+GET http://localhost:3000/api/v1/profiles/2
+
+### Update Data profiles by:id
+PUT http://localhost:3000/api/v1/profiles/11
+Content-Type: application/json
+
+{
+    "user_id":8,
+    "identity_type":"KTP",
+    "identity_number": "1871143534366",
+    "address": "jln.muray "
+}
+
+### Delete data profiles by:id
+DELETE http://localhost:3000/api/v1/profiles/11

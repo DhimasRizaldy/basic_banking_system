@@ -1,5 +1,7 @@
 # basic_banking_system
 
+Challenge Chapter 4 - RESTful APIs with Prisma
+
 ### Langkah-Langkah setup awal api
 1. npm init
 2. npm install prisma --save-dev

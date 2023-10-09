@@ -42,9 +42,9 @@ POST http://localhost:3000/api/v1/profiles
 Content-Type: application/json
 
 {
-    "user_id":8,
+    "user_id":12,
     "identity_type":"KTP",
-    "identity_number": "1871143534366",
+    "identity_number": "1871143587378",
     "address": "jln.Bantu Gg.kunci No.67 Rt.4 Kec.Kemiling Kel.Sumberrejo Semarang"
 }
 
@@ -64,7 +64,7 @@ PUT http://localhost:3000/api/v1/profiles/11
 Content-Type: application/json
 
 {
-    "user_id":8,
+    "user_id":1,
     "identity_type":"KTP",
     "identity_number": "1871143534366",
     "address": "jln.muray "
@@ -111,3 +111,40 @@ Content-Type: application/json
 
 ### Delete data bank_accounts by:id
 DELETE http://localhost:3000/api/v1/bank_accounts/3
+
+
+###4. Test APi Transactions
+
+### Post (Create Data transactions)
+POST http://localhost:3000/api/v1/transactions
+Content-Type: application/json
+
+{
+    "source_account_id":4,
+    "destination_account_id":5,
+    "amount": 1000000
+}
+
+### Get (Get all data transactions)
+GET http://localhost:3000/api/v1/transactions
+
+
+### Get (Get data by pagination)
+GET http://localhost:3000/api/v1/transactions?page=1&limit=3
+
+
+### Get (Get detail data transactions by:id)
+GET http://localhost:3000/api/v1/transactions/9
+
+### Update Data transactions by:id
+PUT http://localhost:3000/api/v1/transactions/9
+Content-Type: application/json
+
+{
+    "source_account_id":6,
+    "destination_account_id":5,
+    "amount": 450000
+}
+
+### Delete data transactions by:id
+DELETE http://localhost:3000/api/v1/transactions/3

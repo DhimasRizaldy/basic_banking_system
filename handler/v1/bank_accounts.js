@@ -4,7 +4,7 @@ const { getPagination } = require('../../helpers/pagination');
 
 // Export Module Function In bank_accounts
 module.exports = {
-    createBankAccounts: async (req, res, nex) => {
+    createBankAccounts: async (req, res, next) => {
         try {
             let { user_id, bank_name, bank_account_number, balance } = req.body;
 

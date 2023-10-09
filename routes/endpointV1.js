@@ -5,9 +5,9 @@ const { createUsers, getAllUsers, getUsersDetail, updateUsers, deleteUsers } = r
 // Import Profiles
 const { createProfiles, getAllProfiles, getProfilesDetail, updateProfiles, deleteProfiles } = require('../handler/v1/profiles');
 // Import Bank_Accounts
-const { createBankAccounts, getAllBankAccounts, getBankAccountsDetail, deleteBankAccounts, updateBankAccounts } = require('../handler/v1/bank_accounts');
+const { createBankAccounts, getAllBankAccounts, getBankAccountsDetail, updateBankAccounts, deleteBankAccounts } = require('../handler/v1/bank_accounts');
 // Import Transactions
-
+const { createTransactions, getAllTransactions, getTransactionsDetail, updateTransactions, deleteTransactions } = require('../handler/v1/transactions');
 
 // url main
 router.get('/', (req, res) => {
@@ -40,7 +40,11 @@ router.put('/bank_accounts/:id', updateBankAccounts);
 router.delete('/bank_accounts/:id', deleteBankAccounts);
 
 // router url transactions
-
+router.post('/transactions', createTransactions);
+router.get('/transactions', getAllTransactions);
+router.get('/transactions/:id', getTransactionsDetail);
+router.put('/transactions/:id', updateTransactions);
+router.delete('/transactions/:id', deleteTransactions);
 
 
 // Export module Router

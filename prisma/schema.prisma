@@ -32,22 +32,22 @@ model Profiles {
 
 // Membuat tabel Bank_Accounts
 model Bank_Accounts {
-  id                  Int            @id @default(autoincrement())
-  user_id             Int            @unique
-  user                Users          @relation(fields: [user_id], references: [id])
+  id                  Int       @id @default(autoincrement())
+  user_id             Int
   bank_name           String
   bank_account_number String
   balance             Float
-  transaksi_asal      Transactions[] @relation("source_bank_account") // Menyimpan transaksi dari akun ini
-  transaksi_tujuan    Transactions[] @relation("destination_bank_account") // Menyimpan transaksi ke akun ini
+  user                Users     @relation(fields: [user_id], references: [id])
+  source_transactions Transactions[] @relation("source_account")
+  destination_transactions Transactions[] @relation("destination_account")
 }
 
 // Membuat tabel Transactions
 model Transactions {
-  id                       Int           @id @default(autoincrement())
-  source_account_id        Int           @unique
-  source_bank_account      Bank_Accounts @relation("source_bank_account", fields: [source_account_id], references: [id])
-  destination_account_id   Int           @unique
-  destination_bank_account Bank_Accounts @relation("destination_bank_account", fields: [destination_account_id], references: [id])
-  amount                   Float
+  id                     Int      @id @default(autoincrement())
+  source_account_id      Int
+  destination_account_id Int
+  amount                 Float
+  source_account         Bank_Accounts @relation("source_account", fields: [source_account_id], references: [id])
+  destination_account    Bank_Accounts @relation("destination_account", fields: [destination_account_id], references: [id])
 }

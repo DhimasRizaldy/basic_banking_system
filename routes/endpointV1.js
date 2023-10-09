@@ -1,8 +1,15 @@
 const express = require('express');
 const router = express.Router();
+// Import Users
 const { createUsers, getAllUsers, getUsersDetail, updateUsers, deleteUsers } = require('../handler/v1/users');
+// Import Profiles
 const { createProfiles, getAllProfiles, getProfilesDetail, updateProfiles, deleteProfiles } = require('../handler/v1/profiles');
+// Import Bank_Accounts
+const { createBankAccounts, getAllBankAccounts, getBankAccountsDetail, deleteBankAccounts, updateBankAccounts } = require('../handler/v1/bank_accounts');
+// Import Transactions
 
+
+// url main
 router.get('/', (req, res) => {
     res.status(200).json({
         status: true,
@@ -24,6 +31,16 @@ router.get('/profiles', getAllProfiles);
 router.get('/profiles/:id', getProfilesDetail);
 router.put('/profiles/:id', updateProfiles);
 router.delete('/profiles/:id', deleteProfiles);
+
+// router url bank_accounts
+router.post('/bank_accounts', createBankAccounts);
+router.get('/bank_accounts', getAllBankAccounts);
+router.get('/bank_accounts/:id', getBankAccountsDetail);
+router.put('/bank_accounts/:id', updateBankAccounts);
+router.delete('/bank_accounts/:id', deleteBankAccounts);
+
+// router url transactions
+
 
 
 // Export module Router
